@@ -10,7 +10,7 @@ class Product:
     description: str
     quantity: int
 
-    def check_quantity(self, quantity) -> [type(ValueError), bool]:
+    def check_quantity(self, quantity) -> bool:
         """
         TODO Верните True если количество продукта больше или равно запрашиваемому
             и False в обратном случае
