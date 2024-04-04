@@ -1,3 +1,6 @@
+from dataclasses import dataclass
+
+@dataclass
 class Product:
     """
     Класс продукта
@@ -7,21 +10,13 @@ class Product:
     description: str
     quantity: int
 
-    def __init__(self, name, price, description, quantity):
-        self.name = name
-        self.price = price
-        self.description = description
-        self.quantity = quantity
-
-    def check_quantity(self, quantity) -> bool:
+    def check_quantity(self, quantity) -> [type(ValueError), bool]:
         """
         TODO Верните True если количество продукта больше или равно запрашиваемому
             и False в обратном случае
         """
-        if (self.quantity >= quantity and quantity >= 0):
+        if self.quantity >= quantity:
             return True
-        elif quantity < 0:
-            return ValueError
         else:
             return False
 
